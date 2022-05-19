@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DDD-Grupal.iml" filepath="$PROJECT_DIR$/DDD-Grupal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DDDGrupal.iml" filepath="$PROJECT_DIR$/.idea/DDDGrupal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/domain/domain.iml" filepath="$PROJECT_DIR$/domain/domain.iml" />
+    </modules>
+  </component>
+</project>
