@@ -3,7 +3,7 @@ package co.com.sofkau.epm.mantenimiento.almacen;
 import co.com.sofka.domain.generic.Entity;
 import co.com.sofkau.epm.mantenimiento.almacen.values.PedidoId;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Estado;
-import co.com.sofkau.epm.mantenimiento.almacen.values.Fecha;
+import co.com.sofkau.epm.mantenimiento.valuesgenericos.Fecha;
 import co.com.sofkau.epm.mantenimiento.almacen.values.Producto;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Observaciones;
 

@@ -1,4 +1,4 @@
-package co.com.sofkau.epm.mantenimiento.almacen.values;
+package co.com.sofkau.epm.mantenimiento.valuesgenericos;
 
 import co.com.sofka.domain.generic.ValueObject;
 

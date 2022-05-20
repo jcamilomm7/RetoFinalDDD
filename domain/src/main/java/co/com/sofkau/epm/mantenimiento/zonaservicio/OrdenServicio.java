@@ -1,10 +1,10 @@
 package co.com.sofkau.epm.mantenimiento.zonaservicio;
 
 import co.com.sofka.domain.generic.Entity;
+import co.com.sofkau.epm.mantenimiento.valuesgenericos.Fecha;
 import co.com.sofkau.epm.mantenimiento.zonaservicio.values.OrdenServicioId;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Estado;
 import co.com.sofkau.epm.mantenimiento.zonaservicio.values.EmpleadoAsignado;
-import co.com.sofkau.epm.mantenimiento.zonaservicio.values.Fecha;
 import co.com.sofkau.epm.mantenimiento.zonaservicio.values.VehiculoAsignado;
 
 import java.util.Set;

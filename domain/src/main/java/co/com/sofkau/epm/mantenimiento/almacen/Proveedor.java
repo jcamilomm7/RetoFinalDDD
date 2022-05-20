@@ -1,7 +1,7 @@
 package co.com.sofkau.epm.mantenimiento.almacen;
 
 import co.com.sofka.domain.generic.Entity;
-import co.com.sofkau.epm.mantenimiento.almacen.values.Direccion;
+import co.com.sofkau.epm.mantenimiento.valuesgenericos.Direccion;
 import co.com.sofkau.epm.mantenimiento.almacen.values.ProveedorId;
 import co.com.sofkau.epm.mantenimiento.almacen.values.Telefono;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Nombre;
