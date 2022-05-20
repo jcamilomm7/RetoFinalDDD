@@ -15,7 +15,7 @@ public class OrdenServicio extends Entity<OrdenServicioId> {
     protected Set<VehiculoAsignado> vehiculoAsignado;
     protected  Set<EmpleadoAsignado> empleadoAsignado;
     protected Estado estado;
-    public OrdenServicio(OrdenServicioId entityId) {
+    public OrdenServicio(OrdenServicioId entityId, Fecha fecha, Set<VehiculoAsignado> vehiculoAsignado, Set<EmpleadoAsignado> empleadoAsignado, Estado estado) {
         super(entityId);
     }
 

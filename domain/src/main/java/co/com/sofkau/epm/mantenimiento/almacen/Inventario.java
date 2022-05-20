@@ -11,7 +11,7 @@ public class Inventario extends Entity<InventarioId> {
     protected Observaciones observaciones;
     protected Planilla planilla;
 
-    public Inventario(InventarioId entityId) {
+    public Inventario(InventarioId entityId, Observaciones observaciones, Planilla planilla) {
         super(entityId);
     }
 

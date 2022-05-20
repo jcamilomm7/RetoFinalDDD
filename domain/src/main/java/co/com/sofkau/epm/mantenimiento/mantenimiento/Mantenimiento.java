@@ -22,6 +22,8 @@ public class Mantenimiento extends AggregateEvent<MantenimientoId> {
         super(entityId);
     }
 
+
+
     public Set<TallerId> getTallerId() {
         return tallerId;
     }

@@ -10,7 +10,7 @@ public class Vehiculo extends Entity<VehiculoId> {
     protected Tipo tipo;
     protected PlanillaMantenimiento planillaMantenimiento;
 
-    public Vehiculo(VehiculoId entityId) {
+    public Vehiculo(VehiculoId entityId, Tipo tipo, PlanillaMantenimiento planillaMantenimiento) {
         super(entityId);
     }
 

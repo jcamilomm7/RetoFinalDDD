@@ -12,7 +12,7 @@ public class GuiaRecepcion extends Entity<GuiaRecepcionId> {
     protected Ordentrabajo ordentrabajo;
     protected Estado estado;
 
-    public GuiaRecepcion(GuiaRecepcionId entityId) {
+    public GuiaRecepcion(GuiaRecepcionId entityId, OrdenServicioVeh ordenServicioVeh, Ordentrabajo ordentrabajo, Estado estado) {
         super(entityId);
     }
 

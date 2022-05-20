@@ -16,7 +16,7 @@ public class Taller  extends AggregateEvent<TallerId> {
     protected  Set<GuiaRecepcion> guiaRecepcion;
     protected Nombre nombre;
 
-    public Taller(TallerId entityId) {
+    public Taller(TallerId entityId, AlmacenId almacenId, Jefetaller jefetaller, Set<PersonalOperativo> personalOperativo, Set<GuiaRecepcion> guiaRecepcion, Nombre nombre) {
         super(entityId);
     }
 

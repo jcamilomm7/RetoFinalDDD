@@ -11,7 +11,7 @@ public class Proveedor extends Entity<ProveedorId> {
     protected Nombre nombre;
     protected Telefono telefono;
     protected Direccion direccion;
-    public Proveedor(ProveedorId entityId) {
+    public Proveedor(ProveedorId entityId, Telefono telefono, Direccion direccion, Nombre nombre) {
         super(entityId);
     }
 

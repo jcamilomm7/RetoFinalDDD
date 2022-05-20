@@ -7,7 +7,7 @@ import co.com.sofkau.epm.mantenimiento.valuesgenericos.Nombre;
 public class Empleado extends Entity<EmpleadoId> {
 
     protected Nombre nombre;
-    public Empleado(EmpleadoId entityId) {
+    public Empleado(EmpleadoId entityId, Nombre nombre) {
         super(entityId);
     }
 

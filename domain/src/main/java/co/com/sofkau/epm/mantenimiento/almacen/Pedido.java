@@ -16,7 +16,7 @@ public class Pedido extends Entity<PedidoId> {
     protected Set<Producto> producto;
     protected Observaciones observaciones;
 
-    public Pedido(PedidoId entityId) {
+    public Pedido(PedidoId entityId, Fecha fecha, Estado estado, Set<Producto> producto, Observaciones observaciones) {
         super(entityId);
     }
 
