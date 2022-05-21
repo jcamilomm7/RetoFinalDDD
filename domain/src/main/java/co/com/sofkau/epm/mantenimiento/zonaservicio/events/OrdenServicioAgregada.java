@@ -18,7 +18,7 @@ public class OrdenServicioAgregada extends DomainEvent {
     private final Estado estado;
 
     public OrdenServicioAgregada(OrdenServicioId ordenServicioId, Fecha fecha, Set<VehiculoAsignado> vehiculoAsignado, Set<EmpleadoAsignado> empleadoAsignado, Estado estado) {
-        super(type);
+        super("co.com.sofkau.epm.mantenimiento.zonaservicio.events.AlmacenCreado");
         this.ordenServicioId = ordenServicioId;
         this.fecha = fecha;
         this.vehiculoAsignado = vehiculoAsignado;

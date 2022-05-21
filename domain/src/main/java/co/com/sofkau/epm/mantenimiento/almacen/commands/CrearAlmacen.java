@@ -7,6 +7,7 @@ import co.com.sofkau.epm.mantenimiento.almacen.values.Telefono;
 public class CrearAlmacen extends Command {
 
     private AlmacenId almacenId;
+
     private Telefono telefono;
 
     public CrearAlmacen(AlmacenId almacenId, Telefono telefono) {

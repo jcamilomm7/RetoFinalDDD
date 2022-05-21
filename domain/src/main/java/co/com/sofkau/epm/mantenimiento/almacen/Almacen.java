@@ -19,7 +19,7 @@ public class Almacen extends AggregateEvent<AlmacenId> {
 
     protected Telefono telefono;
 
-    public Almacen(AlmacenId entityId, Set<Pedido> pedido, Set<Proveedor> proveedor, Set<Inventario> inventario, Telefono telefono) {
+    public Almacen(AlmacenId entityId, Telefono telefono) {
         super(entityId);
         appendChange(new AlmacenCreado(telefono)).apply();
         subscribe(new AlmacenEventChange(this));

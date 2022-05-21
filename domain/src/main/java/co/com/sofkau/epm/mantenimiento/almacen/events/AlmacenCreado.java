@@ -7,6 +7,7 @@ public class AlmacenCreado extends DomainEvent {
 
     private final Telefono telefono;
 
+
     public AlmacenCreado(Telefono telefono) {
         super("co.com.sofkau.epm.mantenimiento.almacen.events.AlmacenCreado");
         this.telefono = telefono;
