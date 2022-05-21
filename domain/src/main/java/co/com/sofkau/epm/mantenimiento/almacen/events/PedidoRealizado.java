@@ -11,24 +11,20 @@ import java.util.Set;
 
 public class PedidoRealizado extends DomainEvent {
 
-    private final PedidoId pedidoId;
+
     private final Fecha fecha;
     private final Estado estado;
     private final Set<Producto> producto;
     private final Observaciones observaciones;
 
-    public PedidoRealizado(PedidoId pedidoId, Fecha fecha, Estado estado, Set<Producto> producto, Observaciones observaciones) {
+    public PedidoRealizado(Fecha fecha, Estado estado, Set<Producto> producto, Observaciones observaciones) {
         super("co.com.sofkau.epm.mantenimiento.almacen.events.PedidoRealizado");
-        this.pedidoId = pedidoId;
         this.fecha = fecha;
         this.estado = estado;
         this.producto = producto;
         this.observaciones = observaciones;
     }
 
-    public PedidoId getPedidoId() {
-        return pedidoId;
-    }
 
     public Fecha getFecha() {
         return fecha;

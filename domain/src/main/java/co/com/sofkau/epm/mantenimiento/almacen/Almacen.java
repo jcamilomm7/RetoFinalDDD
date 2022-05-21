@@ -1,8 +1,12 @@
 package co.com.sofkau.epm.mantenimiento.almacen;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofkau.epm.mantenimiento.almacen.events.AlmacenCreado;
 import co.com.sofkau.epm.mantenimiento.almacen.values.AlmacenId;
 import co.com.sofkau.epm.mantenimiento.almacen.values.Telefono;
+import co.com.sofkau.epm.mantenimiento.taller.TallerEventChange;
+import co.com.sofkau.epm.mantenimiento.taller.events.TallerCreado;
+import co.com.sofkau.epm.mantenimiento.taller.values.TallerId;
 
 import java.util.Set;
 
@@ -14,8 +18,14 @@ public class Almacen extends AggregateEvent<AlmacenId> {
 
     protected Telefono telefono;
 
+    public Almacen(AlmacenId entityId, Set<Pedido> pedido, Set<Proveedor> proveedor, Set<Inventario> inventario, Telefono telefono) {
+        super(entityId);
+        appendChange(new AlmacenCreado(telefono)).apply();
+        subscribe(new AlmacenEventChange(this));
+    }
     public Almacen(AlmacenId entityId) {
         super(entityId);
+        subscribe(new AlmacenEventChange(this));
     }
 
     public Set<Pedido> getPedido() {

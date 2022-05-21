@@ -6,7 +6,7 @@ import co.com.sofkau.epm.mantenimiento.valuesgenericos.Nombre;
 
 public class NombreJefeTallerActualizado extends DomainEvent {
 
-    private  final JefetallerId jefetallerId;
+
     private  final Nombre nombre;
 
     public NombreJefeTallerActualizado(JefetallerId jefetallerId, Nombre nombre) {

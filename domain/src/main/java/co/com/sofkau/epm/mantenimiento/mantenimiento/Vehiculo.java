@@ -12,6 +12,8 @@ public class Vehiculo extends Entity<VehiculoId> {
 
     public Vehiculo(VehiculoId entityId, Tipo tipo, PlanillaMantenimiento planillaMantenimiento) {
         super(entityId);
+        this.tipo = tipo;
+        this.planillaMantenimiento = planillaMantenimiento;
     }
 
     public Tipo getTipo() {

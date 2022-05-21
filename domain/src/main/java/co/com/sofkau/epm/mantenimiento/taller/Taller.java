@@ -2,6 +2,13 @@ package co.com.sofkau.epm.mantenimiento.taller;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofkau.epm.mantenimiento.almacen.values.AlmacenId;
+import co.com.sofkau.epm.mantenimiento.taller.events.EstadoGuiaRecepcionActualizado;
+import co.com.sofkau.epm.mantenimiento.taller.events.GuiaRecepcionCreada;
+import co.com.sofkau.epm.mantenimiento.taller.events.TallerCreado;
+import co.com.sofkau.epm.mantenimiento.taller.values.GuiaRecepcionId;
+import co.com.sofkau.epm.mantenimiento.taller.values.OrdenServicioVeh;
+import co.com.sofkau.epm.mantenimiento.taller.values.Ordentrabajo;
+import co.com.sofkau.epm.mantenimiento.valuesgenericos.Estado;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Nombre;
 import co.com.sofkau.epm.mantenimiento.taller.values.TallerId;
 
@@ -10,21 +17,42 @@ import java.util.Set;
 
 public class Taller  extends AggregateEvent<TallerId> {
 
-    protected AlmacenId alamcenId;
-    protected Jefetaller jefeTaller;
+    protected AlmacenId alamacenId;
+    protected Set<Jefetaller> jefeTaller;
     protected Set<PersonalOperativo> personalOperativo;
     protected  Set<GuiaRecepcion> guiaRecepcion;
     protected Nombre nombre;
 
-    public Taller(TallerId entityId, AlmacenId almacenId, Jefetaller jefetaller, Set<PersonalOperativo> personalOperativo, Set<GuiaRecepcion> guiaRecepcion, Nombre nombre) {
+
+    //Este ya quedo listo
+    public Taller(TallerId tallerId,Nombre nombre, AlmacenId almacenId,Jefetaller jefetaller) {
+        super(tallerId);
+        appendChange(new TallerCreado(nombre, almacenId)).apply();
+        subscribe(new TallerEventChange(this));
+    }
+
+    public Taller(TallerId entityId) {
         super(entityId);
+        subscribe(new TallerEventChange(this));
     }
 
-    public AlmacenId getAlamcenId() {
-        return alamcenId;
+    //Agregar entidad
+public void crearGuiaRecepcion(GuiaRecepcionId guiaRecepcionId, OrdenServicioVeh ordenServicioVeh, Ordentrabajo ordentrabajo, Estado estado) {
+        appendChange(new GuiaRecepcionCreada(guiaRecepcionId,ordenServicioVeh,ordentrabajo,estado)).apply();
+}
+
+
+//Modificar objeto valor
+  /*public void actualziarEstadoGuiaRecepcion(Estado estado){
+        var guiaRecepcionId = new GuiaRecepcionId();
+        appendChange(new EstadoGuiaRecepcionActualizado(guiaRecepcionId,estado)).apply();
+ }*/
+
+    public AlmacenId getAlamacenId() {
+        return alamacenId;
     }
 
-    public Jefetaller getJefeTaller() {
+    public Set<Jefetaller> getJefeTaller() {
         return jefeTaller;
     }
 

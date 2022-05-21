@@ -9,8 +9,11 @@ public class PersonalOperativo extends Entity<PersonalOperativoId> {
 
     protected Nombre nombre;
     protected HabilidadTecnica habilidadTecnica;
-    public PersonalOperativo(PersonalOperativoId entityId) {
+
+    public PersonalOperativo(PersonalOperativoId entityId, Nombre nombre, HabilidadTecnica habilidadTecnica) {
         super(entityId);
+        this.nombre = nombre;
+        this.habilidadTecnica = habilidadTecnica;
     }
 
     public Nombre getNombre() {

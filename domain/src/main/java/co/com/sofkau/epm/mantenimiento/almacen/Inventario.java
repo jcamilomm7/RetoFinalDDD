@@ -13,6 +13,8 @@ public class Inventario extends Entity<InventarioId> {
 
     public Inventario(InventarioId entityId, Observaciones observaciones, Planilla planilla) {
         super(entityId);
+        this.observaciones = observaciones;
+        this.planilla = planilla;
     }
 
     public Observaciones getObservaciones() {

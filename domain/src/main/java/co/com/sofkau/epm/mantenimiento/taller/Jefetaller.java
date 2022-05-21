@@ -7,8 +7,10 @@ import co.com.sofkau.epm.mantenimiento.valuesgenericos.Nombre;
 public class Jefetaller extends Entity<JefetallerId> {
 
     protected Nombre nombre;
-    public Jefetaller(JefetallerId entityId) {
+
+    public Jefetaller(JefetallerId entityId, Nombre nombre) {
         super(entityId);
+        this.nombre = nombre;
     }
 
     public Nombre getNombre() {

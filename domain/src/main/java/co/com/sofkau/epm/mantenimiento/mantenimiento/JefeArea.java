@@ -8,8 +8,9 @@ public class JefeArea  extends Entity<JefeAreaId> {
 
     protected Nombre nombre;
 
-    public JefeArea(JefeAreaId entityId) {
+    public JefeArea(JefeAreaId entityId, Nombre nombre) {
         super(entityId);
+        this.nombre = nombre;
     }
 
     public Nombre getNombre() {

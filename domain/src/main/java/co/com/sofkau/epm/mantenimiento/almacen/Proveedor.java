@@ -11,8 +11,12 @@ public class Proveedor extends Entity<ProveedorId> {
     protected Nombre nombre;
     protected Telefono telefono;
     protected Direccion direccion;
-    public Proveedor(ProveedorId entityId, Telefono telefono, Direccion direccion, Nombre nombre) {
+
+    public Proveedor(ProveedorId entityId, Nombre nombre, Telefono telefono, Direccion direccion) {
         super(entityId);
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.direccion = direccion;
     }
 
     public Nombre getNombre() {

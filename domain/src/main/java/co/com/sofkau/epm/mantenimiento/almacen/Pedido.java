@@ -18,6 +18,10 @@ public class Pedido extends Entity<PedidoId> {
 
     public Pedido(PedidoId entityId, Fecha fecha, Estado estado, Set<Producto> producto, Observaciones observaciones) {
         super(entityId);
+        this.fecha = fecha;
+        this.estado = estado;
+        this.producto = producto;
+        this.observaciones = observaciones;
     }
 
     public Fecha getFecha() {

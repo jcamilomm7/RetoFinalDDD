@@ -2,16 +2,30 @@ package co.com.sofkau.epm.mantenimiento.mantenimiento;
 
 import co.com.sofka.domain.generic.EventChange;
 import co.com.sofkau.epm.mantenimiento.mantenimiento.events.EmpleadoAgregado;
+import co.com.sofkau.epm.mantenimiento.mantenimiento.events.MantenimientoCreado;
 import co.com.sofkau.epm.mantenimiento.mantenimiento.events.TallerAgregado;
 import co.com.sofkau.epm.mantenimiento.mantenimiento.events.VehiculoAgregado;
 import co.com.sofkau.epm.mantenimiento.taller.Taller;
+import co.com.sofkau.epm.mantenimiento.taller.events.TallerCreado;
 import co.com.sofkau.epm.mantenimiento.taller.values.TallerId;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class MantenimientoEventChange extends EventChange {
 
     public MantenimientoEventChange(Mantenimiento mantenimiento) {
+
+        apply((MantenimientoCreado event) -> {
+            mantenimiento.municipio= event.getMunicipio(); //Objeto valor
+            mantenimiento.tallerId = new HashSet<>();
+            mantenimiento.zonaServicioId =new HashSet<>();
+            mantenimiento.jefeArea= new HashSet<>();
+            mantenimiento.empleado= new HashSet<>();
+            mantenimiento.vehiculo= new HashSet<>();
+        });
+
+
 
         apply((EmpleadoAgregado event)->{
             var empleadoId = event.getEmpleadoId();
@@ -21,8 +35,7 @@ public class MantenimientoEventChange extends EventChange {
 
         apply((TallerAgregado event)->{
             var tallerId = event.getTallerId();
-            var taller = new Taller(tallerId, event.getAlmacenId(),event.getJefetaller(),event.getPersonalOperativo(),event.getGuiaRecepcion(),event.getNombre());
-            mantenimiento.tallerId= (Set<TallerId>) taller;
+            mantenimiento.tallerId= (Set<TallerId>) tallerId;
         });
 
         apply((VehiculoAgregado event)->{
