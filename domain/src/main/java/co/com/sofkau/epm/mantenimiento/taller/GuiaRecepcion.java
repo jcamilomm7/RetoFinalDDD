@@ -24,7 +24,7 @@ public class GuiaRecepcion extends Entity<GuiaRecepcionId> {
 
 
 
-    //Se crea entidad dentro d ela misma entidad
+    //Se crea entidad dentro de la misma entidad
     public void crearGuiaRecepcion (GuiaRecepcion guiaRecepcion){
        this.guiaRecepcion = guiaRecepcion;
     }

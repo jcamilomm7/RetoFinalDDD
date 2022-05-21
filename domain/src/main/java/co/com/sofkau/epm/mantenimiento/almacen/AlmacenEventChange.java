@@ -24,8 +24,7 @@ public class AlmacenEventChange extends EventChange {
         });
 
 
-
-        /*apply((InventarioAgregado event)->{
+        apply((InventarioAgregado event)->{
             var inventarioId = event.getInventarioId();
             var inventario =new Inventario(inventarioId, event.getObservaciones(),event.getPlanilla());
             almacen.inventario = (Set<Inventario>) inventario;
@@ -41,6 +40,6 @@ public class AlmacenEventChange extends EventChange {
             var pedidoId = event.getPedidoId();
             var pedido =new Pedido(pedidoId, event.getFecha(),event.getEstado(),event.getProducto(),event.getObservaciones());
             almacen.pedido = (Set<Pedido>) pedido;
-        });*/
+        });
     }
 }

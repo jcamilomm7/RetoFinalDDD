@@ -17,10 +17,6 @@ Qdomain/src/main/java/co/com/sofkau/epm/mantenimiento/almacen/values/Planilla.ja
 Qdomain/src/main/java/co/com/sofkau/epm/mantenimiento/almacen/values/Producto.java,7\9\79093b84b5a3a93d4e9354531013a7e2adb5153a
 Å
 Qdomain/src/main/java/co/com/sofkau/epm/mantenimiento/almacen/values/Telefono.java,1\b\1bdd6a7bca73a6ac412b3472089c20a2bdbd24fd
-é
-^domain/src/main/java/co/com/sofkau/epm/mantenimiento/mantenimiento/commands/AgregarTaller.java,6\e\6e224c47d76b07793e81c36320f474d3fc528e15
-ê
-`domain/src/main/java/co/com/sofkau/epm/mantenimiento/mantenimiento/commands/AgregarEmpleado.java,9\0\9078f034c2ddf679204d8d478b7bc91f7b0cd40d
 Ä
 Pdomain/src/main/java/co/com/sofkau/epm/mantenimiento/valuesgenericos/Estado.java,6\1\61a483e666cda90301109e73792d7ef6ed432828
 

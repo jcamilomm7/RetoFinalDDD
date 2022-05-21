@@ -8,17 +8,22 @@ import co.com.sofkau.epm.mantenimiento.valuesgenericos.Estado;
 
 public class GuiaRecepcionCreada extends DomainEvent {
 
+    private  final GuiaRecepcionId guiaRecepcionId;
     private final OrdenServicioVeh ordenServicioVeh;
     private final Ordentrabajo ordentrabajo;
     private final Estado estado;
 
     public GuiaRecepcionCreada(GuiaRecepcionId guiaRecepcionId, OrdenServicioVeh ordenServicioVeh, Ordentrabajo ordentrabajo, Estado estado) {
         super("co.com.sofkau.epm.mantenimiento.taller.events.GuiaRecepcionCreada");
+        this.guiaRecepcionId = guiaRecepcionId;
         this.ordenServicioVeh = ordenServicioVeh;
         this.ordentrabajo = ordentrabajo;
         this.estado = estado;
     }
 
+    public GuiaRecepcionId getGuiaRecepcionId() {
+        return guiaRecepcionId;
+    }
 
     public OrdenServicioVeh getOrdenServicioVeh() {
         return ordenServicioVeh;

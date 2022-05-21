@@ -4,12 +4,17 @@ import co.com.sofka.domain.generic.Identity;
 import co.com.sofkau.epm.mantenimiento.zonaservicio.values.OrdenServicioId;
 
 public class GuiaRecepcionId extends Identity {
-    public GuiaRecepcionId(String id) {
-        super(id);
+    public GuiaRecepcionId(String value) {
+        super(value);
     }
 
-    public static GuiaRecepcionId of(String id) {
-        return new GuiaRecepcionId(id);
+    public GuiaRecepcionId(){
+
+    }
+
+
+    public static GuiaRecepcionId of(String value) {
+        return new GuiaRecepcionId(value);
     }
 
 }

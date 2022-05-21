@@ -9,15 +9,11 @@ public class NombreJefeTallerActualizado extends DomainEvent {
 
     private  final Nombre nombre;
 
-    public NombreJefeTallerActualizado(JefetallerId jefetallerId, Nombre nombre) {
+    public NombreJefeTallerActualizado(Nombre nombre) {
         super("co.com.sofkau.epm.mantenimiento.taller.events.NombreJefeTallerActualizado");
-        this.jefetallerId = jefetallerId;
         this.nombre = nombre;
     }
 
-    public JefetallerId getJefetallerId() {
-        return jefetallerId;
-    }
 
     public Nombre getNombre() {
         return nombre;

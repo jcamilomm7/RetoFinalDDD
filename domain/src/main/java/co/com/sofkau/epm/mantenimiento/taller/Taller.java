@@ -36,17 +36,18 @@ public class Taller  extends AggregateEvent<TallerId> {
         subscribe(new TallerEventChange(this));
     }
 
-    //Agregar entidad
-public void crearGuiaRecepcion(GuiaRecepcionId guiaRecepcionId, OrdenServicioVeh ordenServicioVeh, Ordentrabajo ordentrabajo, Estado estado) {
+    //Agregar entidad a un set dentro de este agregado
+public void crearGuiaRecepcion(OrdenServicioVeh ordenServicioVeh, Ordentrabajo ordentrabajo, Estado estado) {
+        var guiaRecepcionId = new GuiaRecepcionId();
         appendChange(new GuiaRecepcionCreada(guiaRecepcionId,ordenServicioVeh,ordentrabajo,estado)).apply();
 }
 
 
 //Modificar objeto valor
-  /*public void actualziarEstadoGuiaRecepcion(Estado estado){
+  public void actualziarEstadoGuiaRecepcion(Estado estado){
         var guiaRecepcionId = new GuiaRecepcionId();
         appendChange(new EstadoGuiaRecepcionActualizado(guiaRecepcionId,estado)).apply();
- }*/
+ }
 
     public AlmacenId getAlamacenId() {
         return alamacenId;

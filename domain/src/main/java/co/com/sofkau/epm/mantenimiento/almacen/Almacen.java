@@ -2,11 +2,18 @@ package co.com.sofkau.epm.mantenimiento.almacen;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofkau.epm.mantenimiento.almacen.events.AlmacenCreado;
-import co.com.sofkau.epm.mantenimiento.almacen.values.AlmacenId;
-import co.com.sofkau.epm.mantenimiento.almacen.values.Telefono;
+import co.com.sofkau.epm.mantenimiento.almacen.events.InventarioAgregado;
+import co.com.sofkau.epm.mantenimiento.almacen.events.PedidoRealizado;
+import co.com.sofkau.epm.mantenimiento.almacen.events.ProveedorAgregado;
+import co.com.sofkau.epm.mantenimiento.almacen.values.*;
 import co.com.sofkau.epm.mantenimiento.taller.TallerEventChange;
+import co.com.sofkau.epm.mantenimiento.taller.events.GuiaRecepcionCreada;
 import co.com.sofkau.epm.mantenimiento.taller.events.TallerCreado;
+import co.com.sofkau.epm.mantenimiento.taller.values.GuiaRecepcionId;
+import co.com.sofkau.epm.mantenimiento.taller.values.OrdenServicioVeh;
+import co.com.sofkau.epm.mantenimiento.taller.values.Ordentrabajo;
 import co.com.sofkau.epm.mantenimiento.taller.values.TallerId;
+import co.com.sofkau.epm.mantenimiento.valuesgenericos.*;
 
 import java.util.Set;
 
@@ -27,6 +34,25 @@ public class Almacen extends AggregateEvent<AlmacenId> {
         super(entityId);
         subscribe(new AlmacenEventChange(this));
     }
+
+    public void agregarInventario( Observaciones observaciones, Planilla planilla) {
+        var inventarioId = new InventarioId();
+        appendChange(new InventarioAgregado(inventarioId,observaciones,planilla)).apply();
+    }
+
+    public void agregarProveedor(Telefono telefono, Direccion direccion, Nombre nombre) {
+        var proveedorId = new ProveedorId();
+        appendChange(new ProveedorAgregado(proveedorId,telefono,direccion,nombre)).apply();
+    }
+
+    public void realizarPedido(Fecha fecha, Estado estado, Producto producto, Observaciones observaciones) {
+        var pedidoId = new PedidoId();
+        appendChange(new PedidoRealizado(pedidoId,fecha,estado,producto,observaciones)).apply();
+    }
+
+
+
+
 
     public Set<Pedido> getPedido() {
         return pedido;

@@ -8,6 +8,9 @@ public class TallerId extends Identity {
         super(id);
     }
 
+    public TallerId() {
+    }
+
     public static TallerId of(String id) {
         return new TallerId(id);
     }

@@ -7,6 +7,9 @@ public class VehiculoId extends Identity {
         super(id);
     }
 
+    public VehiculoId() {
+    }
+
     public static VehiculoId of(String id) {
         return new VehiculoId(id);
     }

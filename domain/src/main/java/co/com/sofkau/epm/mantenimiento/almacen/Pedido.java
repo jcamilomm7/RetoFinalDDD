@@ -13,10 +13,10 @@ public class Pedido extends Entity<PedidoId> {
 
     protected Fecha fecha;
     protected Estado estado;
-    protected Set<Producto> producto;
+    protected Producto producto;
     protected Observaciones observaciones;
 
-    public Pedido(PedidoId entityId, Fecha fecha, Estado estado, Set<Producto> producto, Observaciones observaciones) {
+    public Pedido(PedidoId entityId, Fecha fecha, Estado estado, Producto producto, Observaciones observaciones) {
         super(entityId);
         this.fecha = fecha;
         this.estado = estado;
@@ -32,7 +32,7 @@ public class Pedido extends Entity<PedidoId> {
         return estado;
     }
 
-    public Set<Producto> getProducto() {
+    public Producto getProducto() {
         return producto;
     }
 
