@@ -8,6 +8,9 @@ public class JefetallerId extends Identity {
         super(id);
     }
 
+    public JefetallerId() {
+    }
+
     public static JefetallerId of(String id) {
         return new JefetallerId(id);
     }

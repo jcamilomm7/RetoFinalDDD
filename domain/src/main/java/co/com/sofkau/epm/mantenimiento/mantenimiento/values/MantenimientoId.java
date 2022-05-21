@@ -9,6 +9,9 @@ public class MantenimientoId  extends Identity {
         super(id);
     }
 
+    public MantenimientoId() {
+    }
+
     public static MantenimientoId of(String id) {
         return new MantenimientoId(id);
     }

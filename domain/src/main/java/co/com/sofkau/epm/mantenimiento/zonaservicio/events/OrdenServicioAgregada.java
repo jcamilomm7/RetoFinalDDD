@@ -17,7 +17,7 @@ public class OrdenServicioAgregada extends DomainEvent {
     private final Set<EmpleadoAsignado> empleadoAsignado;
     private final Estado estado;
 
-    public OrdenServicioAgregada(String type, OrdenServicioId ordenServicioId, Fecha fecha, Set<VehiculoAsignado> vehiculoAsignado, Set<EmpleadoAsignado> empleadoAsignado, Estado estado) {
+    public OrdenServicioAgregada(OrdenServicioId ordenServicioId, Fecha fecha, Set<VehiculoAsignado> vehiculoAsignado, Set<EmpleadoAsignado> empleadoAsignado, Estado estado) {
         super(type);
         this.ordenServicioId = ordenServicioId;
         this.fecha = fecha;

@@ -6,13 +6,7 @@ import co.com.sofkau.epm.mantenimiento.almacen.events.InventarioAgregado;
 import co.com.sofkau.epm.mantenimiento.almacen.events.PedidoRealizado;
 import co.com.sofkau.epm.mantenimiento.almacen.events.ProveedorAgregado;
 import co.com.sofkau.epm.mantenimiento.almacen.values.*;
-import co.com.sofkau.epm.mantenimiento.taller.TallerEventChange;
-import co.com.sofkau.epm.mantenimiento.taller.events.GuiaRecepcionCreada;
-import co.com.sofkau.epm.mantenimiento.taller.events.TallerCreado;
-import co.com.sofkau.epm.mantenimiento.taller.values.GuiaRecepcionId;
-import co.com.sofkau.epm.mantenimiento.taller.values.OrdenServicioVeh;
-import co.com.sofkau.epm.mantenimiento.taller.values.Ordentrabajo;
-import co.com.sofkau.epm.mantenimiento.taller.values.TallerId;
+
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.*;
 
 import java.util.Set;

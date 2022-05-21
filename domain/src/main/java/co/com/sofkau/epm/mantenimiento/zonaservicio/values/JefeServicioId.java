@@ -8,6 +8,9 @@ public class JefeServicioId extends Identity {
         super(id);
     }
 
+    public JefeServicioId() {
+    }
+
     public static JefeServicioId of(String id) {
         return new JefeServicioId(id);
     }

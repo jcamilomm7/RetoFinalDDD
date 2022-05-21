@@ -8,6 +8,9 @@ public class ZonaServicioId extends Identity {
         super(id);
     }
 
+    public ZonaServicioId() {
+    }
+
     public static ZonaServicioId of(String id) {
         return new ZonaServicioId(id);
     }

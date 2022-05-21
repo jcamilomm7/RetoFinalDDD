@@ -4,6 +4,7 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofkau.epm.mantenimiento.almacen.values.AlmacenId;
 import co.com.sofkau.epm.mantenimiento.taller.events.EstadoGuiaRecepcionActualizado;
 import co.com.sofkau.epm.mantenimiento.taller.events.GuiaRecepcionCreada;
+import co.com.sofkau.epm.mantenimiento.taller.events.NombreTallerCambiado;
 import co.com.sofkau.epm.mantenimiento.taller.events.TallerCreado;
 import co.com.sofkau.epm.mantenimiento.taller.values.GuiaRecepcionId;
 import co.com.sofkau.epm.mantenimiento.taller.values.OrdenServicioVeh;
@@ -42,12 +43,10 @@ public void crearGuiaRecepcion(OrdenServicioVeh ordenServicioVeh, Ordentrabajo o
         appendChange(new GuiaRecepcionCreada(guiaRecepcionId,ordenServicioVeh,ordentrabajo,estado)).apply();
 }
 
+    public void cambiarNombretaller(Nombre nombre){
+        appendChange(new NombreTallerCambiado(nombre)).apply();
+    }
 
-//Modificar objeto valor
-  public void actualziarEstadoGuiaRecepcion(Estado estado){
-        var guiaRecepcionId = new GuiaRecepcionId();
-        appendChange(new EstadoGuiaRecepcionActualizado(guiaRecepcionId,estado)).apply();
- }
 
     public AlmacenId getAlamacenId() {
         return alamacenId;

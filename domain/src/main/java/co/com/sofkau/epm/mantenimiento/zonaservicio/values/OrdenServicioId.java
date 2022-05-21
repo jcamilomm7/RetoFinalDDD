@@ -7,6 +7,9 @@ public class OrdenServicioId extends Identity {
         super(id);
     }
 
+    public OrdenServicioId() {
+    }
+
     public static OrdenServicioId of(String id) {
         return new OrdenServicioId(id);
     }

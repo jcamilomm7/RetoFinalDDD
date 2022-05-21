@@ -7,6 +7,9 @@ public class PersonalOperativoId extends Identity {
         super(id);
     }
 
+    public PersonalOperativoId() {
+    }
+
     public static PersonalOperativoId of(String id) {
         return new PersonalOperativoId(id);
     }
