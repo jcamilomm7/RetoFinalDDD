@@ -18,8 +18,8 @@ public class MantenimientoEventChange extends EventChange {
 
         apply((MantenimientoCreado event) -> {
             mantenimiento.municipio= event.getMunicipio(); //Objeto valor
-            mantenimiento.tallerId = new HashSet<>();
-            mantenimiento.zonaServicioId =new HashSet<>();
+            mantenimiento.tallerId = event.getTallerId();
+            mantenimiento.zonaServicioId =event.getZonaServicioId();
             mantenimiento.jefeArea= new HashSet<>();
             mantenimiento.empleado= new HashSet<>();
             mantenimiento.vehiculo= new HashSet<>();
@@ -35,7 +35,7 @@ public class MantenimientoEventChange extends EventChange {
 
         apply((TallerAgregado event)->{
             var tallerId = event.getTallerId();
-            mantenimiento.tallerId= (Set<TallerId>) tallerId;
+            mantenimiento.tallerId= tallerId;
         });
 
         apply((VehiculoAgregado event)->{

@@ -1,13 +1,6 @@
 package co.com.sofkau.epm.mantenimiento.zonaservicio;
 
 import co.com.sofka.domain.generic.AggregateEvent;
-import co.com.sofkau.epm.mantenimiento.taller.TallerEventChange;
-import co.com.sofkau.epm.mantenimiento.taller.events.GuiaRecepcionCreada;
-import co.com.sofkau.epm.mantenimiento.taller.events.TallerCreado;
-import co.com.sofkau.epm.mantenimiento.taller.values.GuiaRecepcionId;
-import co.com.sofkau.epm.mantenimiento.taller.values.OrdenServicioVeh;
-import co.com.sofkau.epm.mantenimiento.taller.values.Ordentrabajo;
-import co.com.sofkau.epm.mantenimiento.taller.values.TallerId;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Direccion;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Estado;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Fecha;
@@ -29,7 +22,7 @@ protected Set<OrdenServicio> ordenServicio;
 protected Direccion direccion;
 
 
-    public ZonaServicio(ZonaServicioId entityId, Set<JefeServicio> jefeServicio, Set<OrdenServicio> ordenServicio, Direccion direccion) {
+    public ZonaServicio(ZonaServicioId entityId, Direccion direccion) {
         super(entityId);
         appendChange(new ZonaServicioCreada(direccion)).apply();
         subscribe(new ZonaServicioEventChange(this));

@@ -10,14 +10,8 @@ import co.com.sofkau.epm.mantenimiento.mantenimiento.values.*;
 import co.com.sofkau.epm.mantenimiento.taller.GuiaRecepcion;
 import co.com.sofkau.epm.mantenimiento.taller.Jefetaller;
 import co.com.sofkau.epm.mantenimiento.taller.PersonalOperativo;
-import co.com.sofkau.epm.mantenimiento.taller.TallerEventChange;
-import co.com.sofkau.epm.mantenimiento.taller.events.GuiaRecepcionCreada;
 import co.com.sofkau.epm.mantenimiento.taller.events.TallerCreado;
-import co.com.sofkau.epm.mantenimiento.taller.values.GuiaRecepcionId;
-import co.com.sofkau.epm.mantenimiento.taller.values.OrdenServicioVeh;
-import co.com.sofkau.epm.mantenimiento.taller.values.Ordentrabajo;
 import co.com.sofkau.epm.mantenimiento.taller.values.TallerId;
-import co.com.sofkau.epm.mantenimiento.valuesgenericos.Estado;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Nombre;
 import co.com.sofkau.epm.mantenimiento.zonaservicio.values.ZonaServicioId;
 
@@ -25,22 +19,27 @@ import java.util.Set;
 
 public class Mantenimiento extends AggregateEvent<MantenimientoId> {
 
-    protected  Set<TallerId> tallerId;
-    protected Set<ZonaServicioId> zonaServicioId;
+    protected TallerId tallerId;
+    protected ZonaServicioId zonaServicioId;
     protected  Set<JefeArea> jefeArea;
     protected  Set<Empleado> empleado;
     protected  Set<Vehiculo> vehiculo;
 
     protected Municipio municipio;
 
-    public Mantenimiento(MantenimientoId entityId, Set<TallerId> tallerId, Set<ZonaServicioId> zonaServicioId, Set<JefeArea> jefeArea, Set<Empleado> empleado, Set<Vehiculo> vehiculo, Municipio municipio) {
+    public Mantenimiento(MantenimientoId entityId, TallerId tallerId, ZonaServicioId zonaServicioId, Set<JefeArea> jefeArea, Set<Empleado> empleado, Set<Vehiculo> vehiculo, Municipio municipio) {
         super(entityId);
-        appendChange(new MantenimientoCreado(tallerId,zonaServicioId,municipio)).apply();
-        subscribe(new MantenimientoEventChange(this));
+        this.tallerId = tallerId;
+        this.zonaServicioId = zonaServicioId;
+        this.jefeArea = jefeArea;
+        this.empleado = empleado;
+        this.vehiculo = vehiculo;
+        this.municipio = municipio;
     }
 
-    public Mantenimiento(MantenimientoId entityId) {
+    public Mantenimiento(MantenimientoId entityId, TallerId tallerId, ZonaServicioId zonaServicioId, Municipio municipio) {
         super(entityId);
+        appendChange(new MantenimientoCreado(tallerId,zonaServicioId,municipio)).apply();
         subscribe(new MantenimientoEventChange(this));
     }
 
@@ -62,13 +61,11 @@ public class Mantenimiento extends AggregateEvent<MantenimientoId> {
     }
 
 
-
-
-    public Set<TallerId> getTallerId() {
+    public TallerId getTallerId() {
         return tallerId;
     }
 
-    public Set<ZonaServicioId> getZonaServicioIdSet() {
+    public ZonaServicioId getZonaServicioId() {
         return zonaServicioId;
     }
 

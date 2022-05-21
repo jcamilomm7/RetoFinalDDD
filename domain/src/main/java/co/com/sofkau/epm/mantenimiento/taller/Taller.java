@@ -2,7 +2,6 @@ package co.com.sofkau.epm.mantenimiento.taller;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofkau.epm.mantenimiento.almacen.values.AlmacenId;
-import co.com.sofkau.epm.mantenimiento.taller.events.EstadoGuiaRecepcionActualizado;
 import co.com.sofkau.epm.mantenimiento.taller.events.GuiaRecepcionCreada;
 import co.com.sofkau.epm.mantenimiento.taller.events.NombreTallerCambiado;
 import co.com.sofkau.epm.mantenimiento.taller.events.TallerCreado;
@@ -28,12 +27,12 @@ public class Taller  extends AggregateEvent<TallerId> {
     //Este ya quedo listo
     public Taller(TallerId tallerId,Nombre nombre, AlmacenId almacenId,Jefetaller jefetaller) {
         super(tallerId);
-        appendChange(new TallerCreado(nombre, almacenId)).apply();
         subscribe(new TallerEventChange(this));
     }
 
-    public Taller(TallerId entityId) {
+    public Taller(TallerId entityId, AlmacenId almacenId, Nombre nombre) {
         super(entityId);
+        appendChange(new TallerCreado(nombre, almacenId)).apply();
         subscribe(new TallerEventChange(this));
     }
 

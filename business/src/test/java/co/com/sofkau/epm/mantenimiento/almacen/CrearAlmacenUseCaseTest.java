@@ -6,12 +6,11 @@ import co.com.sofkau.epm.mantenimiento.almacen.commands.CrearAlmacen;
 import co.com.sofkau.epm.mantenimiento.almacen.events.AlmacenCreado;
 import co.com.sofkau.epm.mantenimiento.almacen.values.AlmacenId;
 import co.com.sofkau.epm.mantenimiento.almacen.values.Telefono;
-import co.com.sofkau.epm.mantenimiento.valuesgenericos.Nombre;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class CrearCursoUseCaseTest {
+public class CrearAlmacenUseCaseTest {
 
     private CrearAlmacenUseCase useCase;
 

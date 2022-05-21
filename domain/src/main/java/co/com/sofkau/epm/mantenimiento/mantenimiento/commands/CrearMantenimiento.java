@@ -12,11 +12,12 @@ import java.util.Set;
 public class CrearMantenimiento extends Command {
 
     private MantenimientoId mantenimientoId;
-    private Set<TallerId> tallerId;
-    private Set<ZonaServicioId> zonaServicioId;
+    private TallerId tallerId;
+    private ZonaServicioId zonaServicioId;
     private Municipio municipio;
 
-    public CrearMantenimiento(MantenimientoId mantenimientoId, Set<TallerId> tallerId, Set<ZonaServicioId> zonaServicioId, Municipio municipio) {
+
+    public CrearMantenimiento(MantenimientoId mantenimientoId, TallerId tallerId, ZonaServicioId zonaServicioId, Municipio municipio) {
         this.mantenimientoId = mantenimientoId;
         this.tallerId = tallerId;
         this.zonaServicioId = zonaServicioId;
@@ -27,11 +28,11 @@ public class CrearMantenimiento extends Command {
         return mantenimientoId;
     }
 
-    public Set<TallerId> getTallerId() {
+    public TallerId getTallerId() {
         return tallerId;
     }
 
-    public Set<ZonaServicioId> getZonaServicioId() {
+    public ZonaServicioId getZonaServicioId() {
         return zonaServicioId;
     }
 
