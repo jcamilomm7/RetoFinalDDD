@@ -1,32 +1,31 @@
 package co.com.sofkau.epm.mantenimiento.almacen.commands;
 
 import co.com.sofka.domain.generic.Command;
-import co.com.sofkau.epm.mantenimiento.almacen.values.PedidoId;
+import co.com.sofkau.epm.mantenimiento.almacen.values.AlmacenId;
+import co.com.sofkau.epm.mantenimiento.almacen.values.Planilla;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Fecha;
 import co.com.sofkau.epm.mantenimiento.almacen.values.Producto;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Estado;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Observaciones;
 
-import java.util.Set;
-
 public class RealizarPedido extends Command {
 
-    private PedidoId pedidoId;
+    private AlmacenId almacenId;
     private Fecha fecha;
     private Estado estado;
-    private Set<Producto> producto;
+    private Producto producto;
     private Observaciones observaciones;
 
-    public RealizarPedido(PedidoId pedidoId, Fecha fecha, Estado estado, Set<Producto> producto, Observaciones observaciones) {
-        this.pedidoId = pedidoId;
+    public RealizarPedido(AlmacenId almacenId, Fecha fecha, Estado estado, Producto producto, Observaciones observaciones) {
+        this.almacenId = almacenId;
         this.fecha = fecha;
         this.estado = estado;
         this.producto = producto;
         this.observaciones = observaciones;
     }
 
-    public PedidoId getPedidoId() {
-        return pedidoId;
+    public AlmacenId getAlmacenId() {
+        return almacenId;
     }
 
     public Fecha getFecha() {
@@ -37,7 +36,7 @@ public class RealizarPedido extends Command {
         return estado;
     }
 
-    public Set<Producto> getProducto() {
+    public Producto getProducto() {
         return producto;
     }
 

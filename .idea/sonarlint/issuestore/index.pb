@@ -13,9 +13,3 @@ Wdomain/src/main/java/co/com/sofkau/epm/mantenimiento/almacen/commands/CrearAlma
 cdomain/src/main/java/co/com/sofkau/epm/mantenimiento/zonaservicio/events/OrdenServicioAgregada.java,9\2\92ffe449325745ff65dfd4ce7fc4e33bd3a1da93
 ë
 abusiness/src/main/java/co/com/sofkau/epm/mantenimiento/zonaservicio/CrearZonaServicioUseCase.java,4\8\48e359b203198205db5c8b370f8db791493ebfa9
-Å
-Qdomain/src/main/java/co/com/sofkau/epm/mantenimiento/almacen/values/Telefono.java,1\b\1bdd6a7bca73a6ac412b3472089c20a2bdbd24fd
-Ä
-Pdomain/src/main/java/co/com/sofkau/epm/mantenimiento/valuesgenericos/Nombre.java,d\9\d9f5f3df9e078d456f864602d60ebe666c33ffe9
-É
-Sdomain/src/main/java/co/com/sofkau/epm/mantenimiento/valuesgenericos/Direccion.java,e\5\e5b843d04e940abc5c32a3b52db0c3a12e324717
