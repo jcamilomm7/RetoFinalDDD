@@ -1,6 +1,7 @@
 package co.com.sofkau.epm.mantenimiento.almacen;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.epm.mantenimiento.almacen.events.AlmacenCreado;
 import co.com.sofkau.epm.mantenimiento.almacen.events.InventarioAgregado;
 import co.com.sofkau.epm.mantenimiento.almacen.events.PedidoRealizado;
@@ -9,6 +10,7 @@ import co.com.sofkau.epm.mantenimiento.almacen.values.*;
 
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.*;
 
+import java.util.List;
 import java.util.Set;
 
 public class Almacen extends AggregateEvent<AlmacenId> {
@@ -29,6 +31,12 @@ public class Almacen extends AggregateEvent<AlmacenId> {
         subscribe(new AlmacenEventChange(this));
     }
 
+    public static Almacen from(AlmacenId entityId, List<DomainEvent> events){
+        var almacen = new Almacen(entityId);
+        events.forEach(almacen::applyEvent);
+        return almacen;
+    }
+
     public void agregarInventario( Observaciones observaciones, Planilla planilla) {
         var inventarioId = new InventarioId();
         appendChange(new InventarioAgregado(inventarioId,observaciones,planilla)).apply();
@@ -43,6 +51,8 @@ public class Almacen extends AggregateEvent<AlmacenId> {
         var pedidoId = new PedidoId();
         appendChange(new PedidoRealizado(pedidoId,fecha,estado,producto,observaciones)).apply();
     }
+
+
 
 
 

@@ -1,6 +1,7 @@
 package co.com.sofkau.epm.mantenimiento.almacen.commands;
 
 import co.com.sofka.domain.generic.Command;
+import co.com.sofkau.epm.mantenimiento.almacen.values.AlmacenId;
 import co.com.sofkau.epm.mantenimiento.almacen.values.ProveedorId;
 import co.com.sofkau.epm.mantenimiento.almacen.values.Telefono;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Direccion;
@@ -8,20 +9,21 @@ import co.com.sofkau.epm.mantenimiento.valuesgenericos.Nombre;
 
 public class AgregarProveedor extends Command {
 
-    private ProveedorId proveedorId;
+    private AlmacenId almacenId;
     private Telefono telefono;
     private Direccion direccion;
     private Nombre nombre;
 
-    public AgregarProveedor(ProveedorId proveedorId, Telefono telefono, Direccion direccion, Nombre nombre) {
-        this.proveedorId = proveedorId;
+
+    public AgregarProveedor(AlmacenId almacenId, Telefono telefono, Direccion direccion, Nombre nombre) {
+        this.almacenId = almacenId;
         this.telefono = telefono;
         this.direccion = direccion;
         this.nombre = nombre;
     }
 
-    public ProveedorId getProveedorId() {
-        return proveedorId;
+    public AlmacenId getAlmacenId() {
+        return almacenId;
     }
 
     public Telefono getTelefono() {
