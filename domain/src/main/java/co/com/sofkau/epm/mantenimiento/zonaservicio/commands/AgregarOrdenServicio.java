@@ -5,34 +5,29 @@ import co.com.sofkau.epm.mantenimiento.valuesgenericos.Estado;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Fecha;
 import co.com.sofkau.epm.mantenimiento.zonaservicio.values.EmpleadoAsignado;
 import co.com.sofkau.epm.mantenimiento.zonaservicio.values.VehiculoAsignado;
+import co.com.sofkau.epm.mantenimiento.zonaservicio.values.ZonaServicioId;
 
 import java.util.Set;
 
 
 public class AgregarOrdenServicio extends Command {
 
+    private ZonaServicioId zonaServicioId;
     private Fecha fecha;
-    private Set<VehiculoAsignado> vehiculoAsignado;
-    private Set<EmpleadoAsignado> empleadoAsignado;
     private Estado estado;
 
-    public AgregarOrdenServicio(Fecha fecha, Set<VehiculoAsignado> vehiculoAsignado, Set<EmpleadoAsignado> empleadoAsignado, Estado estado) {
+    public AgregarOrdenServicio(ZonaServicioId zonaServicioId, Fecha fecha, Estado estado) {
+        this.zonaServicioId = zonaServicioId;
         this.fecha = fecha;
-        this.vehiculoAsignado = vehiculoAsignado;
-        this.empleadoAsignado = empleadoAsignado;
         this.estado = estado;
+    }
+
+    public ZonaServicioId getZonaServicioId() {
+        return zonaServicioId;
     }
 
     public Fecha getFecha() {
         return fecha;
-    }
-
-    public Set<VehiculoAsignado> getVehiculoAsignado() {
-        return vehiculoAsignado;
-    }
-
-    public Set<EmpleadoAsignado> getEmpleadoAsignado() {
-        return empleadoAsignado;
     }
 
     public Estado getEstado() {
