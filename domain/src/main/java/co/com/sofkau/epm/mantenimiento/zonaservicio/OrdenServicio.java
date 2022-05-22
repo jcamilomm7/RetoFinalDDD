@@ -19,8 +19,10 @@ public class OrdenServicio extends Entity<OrdenServicioId> {
     public OrdenServicio(OrdenServicioId entityId, Fecha fecha, Estado estado) {
         super(entityId);
         this.fecha = fecha;
-        this.vehiculoAsignado = vehiculoAsignado;
-        this.empleadoAsignado = empleadoAsignado;
+        this.estado = estado;
+    }
+
+    public void cambiarEstado(Estado estado){
         this.estado = estado;
     }
 

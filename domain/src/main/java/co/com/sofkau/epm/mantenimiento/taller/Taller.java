@@ -35,6 +35,7 @@ public class Taller  extends AggregateEvent<TallerId> {
     }
 
 
+
     public static Taller from(TallerId entityId, List<DomainEvent> events){
         var taller = new Taller(entityId);
         events.forEach(taller::applyEvent);
@@ -58,9 +59,6 @@ public void crearGuiaRecepcion(OrdenServicioVeh ordenServicioVeh, Ordentrabajo o
         appendChange(new PersonalOperativoAgregado( personalOperativoId,nombre,habilidadTecnica)).apply();
     }
 
-    public void cambiarNombretaller(Nombre nombre){
-        appendChange(new NombreTallerCambiado(nombre)).apply();
-    }
 
 
     public AlmacenId getAlamacenId() {

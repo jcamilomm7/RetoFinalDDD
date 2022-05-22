@@ -2,6 +2,7 @@ package co.com.sofkau.epm.mantenimiento.taller;
 
 import co.com.sofka.domain.generic.EventChange;
 import co.com.sofkau.epm.mantenimiento.taller.events.*;
+import co.com.sofkau.epm.mantenimiento.valuesgenericos.Nombre;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -37,10 +38,6 @@ public class TallerEventChange extends EventChange {
             var jefeTaller = new Jefetaller(jefeTallerId, event.getNombre());
             taller.jefeTaller= (Set<Jefetaller>) jefeTaller;
 
-        });
-
-        apply((NombreTallerCambiado event) -> {
-            taller.nombre = event.getNombre();
         });
 
 

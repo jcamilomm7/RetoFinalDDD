@@ -25,8 +25,6 @@ Xdomain/src/main/java/co/com/sofkau/epm/mantenimiento/almacen/events/PedidoReali
 Kdomain/src/main/java/co/com/sofkau/epm/mantenimiento/almacen/Proveedor.java,0\1\017882a07d59899cbb7ba81469fcb971024411fb
 ~
 Ndomain/src/main/java/co/com/sofkau/epm/mantenimiento/taller/GuiaRecepcion.java,9\d\9d2c262a98be0763a9b1eb9802e115dc1f7b7558
-Ñ
-Tdomain/src/main/java/co/com/sofkau/epm/mantenimiento/almacen/AlmacenEventChange.java,9\b\9b4b7c7f746c863b237afdbe04e549eb3fe23dd8
 Å
 Qdomain/src/main/java/co/com/sofkau/epm/mantenimiento/almacen/values/Telefono.java,1\b\1bdd6a7bca73a6ac412b3472089c20a2bdbd24fd
 ã
@@ -59,20 +57,10 @@ y
 Idomain/src/main/java/co/com/sofkau/epm/mantenimiento/almacen/Almacen.java,1\0\1088f7b248757c3df30677b5a7451058b32308b1
 Ö
 Ubusiness/src/main/java/co/com/sofkau/epm/mantenimiento/taller/CrearTallerUseCase.java,1\9\19641648007d1fe46ba8af2c94bd6150b81fa59b
-è
-_business/src/test/java/co/com/sofkau/epm/mantenimiento/almacen/AgregarProveedorUseCaseTest.java,3\8\38cc029d118b77fdda8181e59279f70f21dd9b71
-ã
-[business/src/test/java/co/com/sofkau/epm/mantenimiento/almacen/CrearAlmacenUseCaseTest.java,d\e\de54440b89b33943f06a8815d8572bc7670fee0d
-ó
-gbusiness/src/test/java/co/com/sofkau/epm/mantenimiento/mantenimiento/CrearMantenimientoUseCasetest.java,1\d\1d7805064af2b401b770948e9cd2b3b052bb32ef
-å
-\domain/src/main/java/co/com/sofkau/epm/mantenimiento/taller/events/NombreTallerCambiado.java,a\f\af56b4b0985903ea7d5812fba6effc65f63358af
 á
 Wdomain/src/main/java/co/com/sofkau/epm/mantenimiento/valuesgenericos/Observaciones.java,8\9\8949de1022cbc5f314c9d4ea5fb0e143efbfac2c
 å
 \business/src/main/java/co/com/sofkau/epm/mantenimiento/almacen/AgregarInventarioUseCase.java,c\5\c5bdf68154258a1d6d1587e936be2bda730f6d20
-ê
-`business/src/test/java/co/com/sofkau/epm/mantenimiento/almacen/AgregarInventarioUseCaseTest.java,7\2\7225a3565275a646b3b1307bd5e331879ad4fcba
 å
 \domain/src/main/java/co/com/sofkau/epm/mantenimiento/taller/commands/CrearGuiaRecepcion.java,9\8\982ccf8cde0399098274fffcdbfb41b827a7762b
 á
@@ -83,5 +71,3 @@ Wbusiness/src/main/java/co/com/sofkau/epm/mantenimiento/almacen/CrearAlmacenUseC
 Xdomain/src/main/java/co/com/sofkau/epm/mantenimiento/taller/values/OrdenServicioVeh.java,5\4\542337212a03e629d667f620244ff9a4307bc64f
 à
 Xdomain/src/main/java/co/com/sofkau/epm/mantenimiento/taller/values/HabilidadTecnica.java,2\5\25e9a44ab871c6498df5ba64bce423b28f425e36
-â
-Ybusiness/src/test/java/co/com/sofkau/epm/mantenimiento/taller/CrearTallerUseCaseTest.java,6\f\6f74aba6c491920bb71d0052e6f409d9769c1c1b

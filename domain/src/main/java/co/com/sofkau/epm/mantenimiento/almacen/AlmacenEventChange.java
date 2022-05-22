@@ -41,5 +41,7 @@ public class AlmacenEventChange extends EventChange {
             var pedido =new Pedido(pedidoId, event.getFecha(),event.getEstado(),event.getProducto(),event.getObservaciones());
             almacen.pedido = (Set<Pedido>) pedido;
         });
+
+
     }
 }
