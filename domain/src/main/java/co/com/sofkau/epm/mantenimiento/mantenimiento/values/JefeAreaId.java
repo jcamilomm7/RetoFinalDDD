@@ -7,6 +7,9 @@ public class JefeAreaId extends Identity {
         super(id);
     }
 
+    public JefeAreaId() {
+    }
+
     public static JefeAreaId of(String id) {
         return new JefeAreaId(id);
     }

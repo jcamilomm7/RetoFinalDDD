@@ -3,15 +3,10 @@ package co.com.sofkau.epm.mantenimiento.taller;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.epm.mantenimiento.almacen.values.AlmacenId;
-import co.com.sofkau.epm.mantenimiento.taller.events.GuiaRecepcionCreada;
-import co.com.sofkau.epm.mantenimiento.taller.events.NombreTallerCambiado;
-import co.com.sofkau.epm.mantenimiento.taller.events.TallerCreado;
-import co.com.sofkau.epm.mantenimiento.taller.values.GuiaRecepcionId;
-import co.com.sofkau.epm.mantenimiento.taller.values.OrdenServicioVeh;
-import co.com.sofkau.epm.mantenimiento.taller.values.Ordentrabajo;
+import co.com.sofkau.epm.mantenimiento.taller.events.*;
+import co.com.sofkau.epm.mantenimiento.taller.values.*;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Estado;
 import co.com.sofkau.epm.mantenimiento.valuesgenericos.Nombre;
-import co.com.sofkau.epm.mantenimiento.taller.values.TallerId;
 
 import java.util.List;
 import java.util.Set;
@@ -52,6 +47,16 @@ public void crearGuiaRecepcion(OrdenServicioVeh ordenServicioVeh, Ordentrabajo o
         var guiaRecepcionId = new GuiaRecepcionId();
         appendChange(new GuiaRecepcionCreada( guiaRecepcionId,ordenServicioVeh,ordentrabajo,estado)).apply();
 }
+
+    public void agregarJefeTaller(Nombre nombre) {
+        var jefeTallerId = new JefetallerId();
+        appendChange(new JefeTallerAgregado( jefeTallerId,nombre)).apply();
+    }
+
+    public void agregarPersonalOperativo( Nombre nombre, HabilidadTecnica habilidadTecnica) {
+        var personalOperativoId = new PersonalOperativoId();
+        appendChange(new PersonalOperativoAgregado( personalOperativoId,nombre,habilidadTecnica)).apply();
+    }
 
     public void cambiarNombretaller(Nombre nombre){
         appendChange(new NombreTallerCambiado(nombre)).apply();

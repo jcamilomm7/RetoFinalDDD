@@ -1,10 +1,8 @@
 package co.com.sofkau.epm.mantenimiento.taller;
 
 import co.com.sofka.domain.generic.EventChange;
-import co.com.sofkau.epm.mantenimiento.taller.events.EstadoGuiaRecepcionActualizado;
-import co.com.sofkau.epm.mantenimiento.taller.events.GuiaRecepcionCreada;
-import co.com.sofkau.epm.mantenimiento.taller.events.NombreTallerCambiado;
-import co.com.sofkau.epm.mantenimiento.taller.events.TallerCreado;
+import co.com.sofkau.epm.mantenimiento.taller.events.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,6 +23,20 @@ public class TallerEventChange extends EventChange {
             var guiaRecepcion = new GuiaRecepcion(guiaRecepcionId, event.getOrdenServicioVeh(), event.getOrdentrabajo(),event.getEstado());
             taller.guiaRecepcion = (Set<GuiaRecepcion>) guiaRecepcion;
             
+        });
+
+        apply((PersonalOperativoAgregado event)->{
+            var personalOperativoId = event.getPersonalOperativoId();
+            var personaloperativo = new PersonalOperativo(personalOperativoId, event.getNombre(), event.getHabilidadTecnica());
+            taller.personalOperativo = (Set<PersonalOperativo>) personaloperativo;
+
+        });
+
+        apply((JefeTallerAgregado event)->{
+            var jefeTallerId = event.getJefetallerId();
+            var jefeTaller = new Jefetaller(jefeTallerId, event.getNombre());
+            taller.jefeTaller= (Set<Jefetaller>) jefeTaller;
+
         });
 
         apply((NombreTallerCambiado event) -> {
